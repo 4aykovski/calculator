@@ -34,6 +34,9 @@ namespace calculator.Command
                 return;
             }
 
+            // обрабатываем возможные значения передаваемого параметра в команду
+            // , - разделитель для дробных
+            // остальное - цифры
             switch (button)
             {
                 case ",":
@@ -56,6 +59,7 @@ namespace calculator.Command
                         _mainWindowViewModel.ClearDisplay();
                     }
 
+                    // если сейчас на Display 0, то приравниваем инпут, чтобы не получилось "01"
                     if (_mainWindowViewModel.Display == "0")
                     {
                         _mainWindowViewModel.Display = input;

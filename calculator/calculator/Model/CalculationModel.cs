@@ -27,6 +27,7 @@ namespace calculator.Model
 
         public void CalculateResult()
         {
+            ValidateData();
             try
             {
                 switch (Operation)
@@ -65,9 +66,22 @@ namespace calculator.Model
 
         private void ValidateData()
         {
-            ValidateOperand(FirstOperand);
-            ValidateOperand(LastOperand);
             ValidateOperation(Operation);
+            switch (Operation)
+            {
+                case "/":
+                case "*":
+                case "+":
+                case "-":
+                    ValidateOperand(FirstOperand);
+                    ValidateOperand(LastOperand);
+                    break;
+                case "1^2":
+                case "2^2":
+                    ValidateOperand(FirstOperand);
+                    break;
+            }
+
         }
 
         private void ValidateOperand(string operand)
@@ -91,6 +105,8 @@ namespace calculator.Model
                 case "*":
                 case "+":
                 case "-":
+                case "1^2":
+                case "2^2":
                     break;
                 default:
                     _result = "Invalid operation: " + operation;

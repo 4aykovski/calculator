@@ -29,6 +29,7 @@ namespace calculator.Command
             {
                 int degree = (int)Convert.ToInt64(input.ToString());
 
+                // если первый операнд пустой, то мы будем работать с текущим вводом в "Display"
                 if (string.IsNullOrEmpty(_mainWindowViewModel.FirstOperand))
                 {
                     _mainWindowViewModel.FirstOperand = _mainWindowViewModel.Display;
@@ -40,6 +41,7 @@ namespace calculator.Command
                     _mainWindowViewModel.Display = _mainWindowViewModel.Result;
                     _mainWindowViewModel.NewDisplay = true;
                 }
+                // если первый операнд не пустой, значит остается работать только со вторым операндом, который сейчас введен в "Display"
                 else
                 {
                     _mainWindowViewModel.LastOperand = _mainWindowViewModel.Display;

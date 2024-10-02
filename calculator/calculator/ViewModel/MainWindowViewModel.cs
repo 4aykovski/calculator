@@ -52,8 +52,11 @@ namespace calculator.ViewModel
             set { _calculation.Operation = value; OnPropertyChanged(nameof(Operation)); }
         }
 
+        /// <summary>
+        ///     Поле показывающее нужно ли обновлять нижний дисплей текущего ввода.
+        /// </summary>
         private bool _newDisplay;
-       public bool NewDisplay
+        public bool NewDisplay
         {
             get { return _newDisplay; }
             set { _newDisplay = value; OnPropertyChanged(nameof(NewDisplay)); }
@@ -87,6 +90,10 @@ namespace calculator.ViewModel
             DegreeUpBtnClickCommand = new DegreeUpBtnClickCommand(this);
         }
 
+        
+        /// <summary>
+        ///     Полностью обнуляет значения калькулятора, скидывая его до изначального состояния запуска.
+        /// </summary>
         public void Reset()
         {
             NewDisplay = false;
@@ -97,6 +104,9 @@ namespace calculator.ViewModel
             FullExpression = string.Empty;
         }
 
+        /// <summary>
+        ///     Обнуляет нижнюю строку дисплея "Display", в которой показывается текущий ввод пользователя.
+        /// </summary>
         public void ClearDisplay()
         {
             Display = "";
