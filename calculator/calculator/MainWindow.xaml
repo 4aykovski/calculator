@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:calculator"
         mc:Ignorable="d"
-        Title="MainWindow" Height="288" Width="215">
+        Title="MainWindow" Height="363" Width="215">
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
@@ -17,11 +17,18 @@
         </Grid.ColumnDefinitions>
 
         <Grid Grid.Row="0">
-            <TextBlock Name="DisplayBox" Text="{Binding Path=Display, UpdateSourceTrigger=PropertyChanged}" Background="White" FontSize="24" Margin="10" TextAlignment="Right"/>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="25"/>
+                <RowDefinition Height="50"/>
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Name="FullExpressionBox" Text="{Binding FullExpression, UpdateSourceTrigger=PropertyChanged}" Background="White" FontSize="12"  Margin="10 10 10 0" TextAlignment="Right"/>
+            <TextBlock Grid.Row="1" Name="DisplayBox" Text="{Binding Display, UpdateSourceTrigger=PropertyChanged}" Background="White" FontSize="24" Margin="10 0 10 0" TextAlignment="Right"/>
         </Grid>
 
         <Grid Grid.Row="1">
             <Grid.RowDefinitions>
+                <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
                 <RowDefinition Height="50"/>
@@ -34,9 +41,9 @@
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="0">0</Button>
-            <Button Grid.Row="0" Grid.Column="1" Command="{Binding ClearDisplayCommand}">C</Button>
-            <Button Grid.Row="0" Grid.Column="2" Command="{Binding OperatorBtnClickCommand}" CommandParameter="=">=</Button>
+            <Button Grid.Row="0" Grid.Column="0" Command="{Binding RemoveLastSymbolBtnClickCommand}" CommandParameter="0">Del</Button>
+            <Button Grid.Row="0" Grid.Column="1" Command="{Binding ResetCommand}">C</Button>
+            <Button Grid.Row="0" Grid.Column="2" Command="{Binding DegreeUpBtnClickCommand}" CommandParameter="2">^2</Button>
             <Button Grid.Row="0" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="+">+</Button>
 
             <Button Grid.Row="1" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="1">1</Button>
@@ -53,6 +60,12 @@
             <Button Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="8">8</Button>
             <Button Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="9">9</Button>
             <Button Grid.Row="3" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="/">/</Button>
+
+
+            <Button Grid.Row="4" Grid.Column="0" Command="{Binding ChangeMinusBtnClickCommand}">+-</Button>
+            <Button Grid.Row="4" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="0">0</Button>
+            <Button Grid.Row="4" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter=",">,</Button>
+            <Button Grid.Row="4" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="=">=</Button>
         </Grid>
 
     </Grid>

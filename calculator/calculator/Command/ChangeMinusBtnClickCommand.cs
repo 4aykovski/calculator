@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace calculator.Command
 {
-    public class ClearDisplayCommand : CommandBase
+    public class ChangeMinusBtnClickCommand : CommandBase
     {
         public override void Execute(object? parameter)
         {
