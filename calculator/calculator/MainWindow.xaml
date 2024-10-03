@@ -8,6 +8,14 @@
         Title="MainWindow" Height="363" Width="215">
 
     <Grid>
+        <Grid.Resources>
+            <ResourceDictionary>
+                <ResourceDictionary.MergedDictionaries>
+                    <ResourceDictionary Source="MainWindowResources.xaml"/>
+                </ResourceDictionary.MergedDictionaries>
+            </ResourceDictionary>
+        </Grid.Resources>
+        
         <Grid.RowDefinitions>
             <RowDefinition Height="75"/>
             <RowDefinition Height="*"/>
@@ -41,31 +49,31 @@
                 <ColumnDefinition Width="50"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Row="0" Grid.Column="0" Command="{Binding RemoveLastSymbolBtnClickCommand}" CommandParameter="0">Del</Button>
-            <Button Grid.Row="0" Grid.Column="1" Command="{Binding ResetCommand}">C</Button>
-            <Button Grid.Row="0" Grid.Column="2" Command="{Binding DegreeUpBtnClickCommand}" CommandParameter="2">^2</Button>
-            <Button Grid.Row="0" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="+">+</Button>
+            <Button Grid.Row="0" Grid.Column="0" Command="{Binding RemoveLastSymbolBtnClickCommand}" CommandParameter="0" Style="{StaticResource OperationBtn}">Del</Button>
+            <Button Grid.Row="0" Grid.Column="1" Command="{Binding ResetCommand}" Style="{StaticResource OperationBtn}">C</Button>
+            <Button Grid.Row="0" Grid.Column="2" Command="{Binding DegreeUpBtnClickCommand}" CommandParameter="2" Style="{StaticResource OperationBtn}">^2</Button>
+            <Button Grid.Row="0" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="+" Style="{StaticResource OperationBtn}">+</Button>
 
-            <Button Grid.Row="1" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="1">1</Button>
-            <Button Grid.Row="1" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="2">2</Button>
-            <Button Grid.Row="1" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="3">3</Button>
-            <Button Grid.Row="1" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="-">-</Button>
+            <Button Grid.Row="1" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="1" Style="{StaticResource DigitBtn}">1</Button>
+            <Button Grid.Row="1" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="2" Style="{StaticResource DigitBtn}">2</Button>
+            <Button Grid.Row="1" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="3" Style="{StaticResource DigitBtn}">3</Button>
+            <Button Grid.Row="1" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="-" Style="{StaticResource OperationBtn}">-</Button>
 
-            <Button Grid.Row="2" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="4">4</Button>
-            <Button Grid.Row="2" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="5">5</Button>
-            <Button Grid.Row="2" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="6">6</Button>
-            <Button Grid.Row="2" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="*">*</Button>
+            <Button Grid.Row="2" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="4" Style="{StaticResource DigitBtn}">4</Button>
+            <Button Grid.Row="2" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="5" Style="{StaticResource DigitBtn}">5</Button>
+            <Button Grid.Row="2" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="6" Style="{StaticResource DigitBtn}">6</Button>
+            <Button Grid.Row="2" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="*" Style="{StaticResource OperationBtn}">*</Button>
 
-            <Button Grid.Row="3" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="7">7</Button>
-            <Button Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="8">8</Button>
-            <Button Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="9">9</Button>
-            <Button Grid.Row="3" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="/">/</Button>
+            <Button Grid.Row="3" Grid.Column="0" Command="{Binding DigitBtnClickCommand}" CommandParameter="7" Style="{StaticResource DigitBtn}">7</Button>
+            <Button Grid.Row="3" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="8" Style="{StaticResource DigitBtn}">8</Button>
+            <Button Grid.Row="3" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="9" Style="{StaticResource DigitBtn}">9</Button>
+            <Button Grid.Row="3" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="/" Style="{StaticResource OperationBtn}">/</Button>
 
 
-            <Button Grid.Row="4" Grid.Column="0" Command="{Binding ChangeMinusBtnClickCommand}">+-</Button>
-            <Button Grid.Row="4" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="0">0</Button>
-            <Button Grid.Row="4" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter=",">,</Button>
-            <Button Grid.Row="4" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="=">=</Button>
+            <!--<Button Grid.Row="4" Grid.Column="0" Command="{Binding ChangeMinusBtnClickCommand}" Style="{StaticResource OperationBtn}">+-</Button>-->
+            <Button Grid.Row="4" Grid.Column="1" Command="{Binding DigitBtnClickCommand}" CommandParameter="0" Style="{StaticResource DigitBtn}">0</Button>
+            <Button Grid.Row="4" Grid.Column="2" Command="{Binding DigitBtnClickCommand}" CommandParameter="," Style="{StaticResource DigitBtn}">,</Button>
+            <Button Grid.Row="4" Grid.Column="3" Command="{Binding OperatorBtnClickCommand}" CommandParameter="=" Style="{StaticResource OperationBtn}">=</Button>
         </Grid>
 
     </Grid>
